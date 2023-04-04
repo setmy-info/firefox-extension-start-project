@@ -1,0 +1,27 @@
+{
+    "manifest_version": 2,
+    "name": "firefox-extension-start-project",
+    "version": "1.0.0-SNAPSHOT",
+    "description": "FF extension start project.",
+    "homepage_url": "https://github.com/setmy-info/firefox-extension-start-project",
+    "icons": {
+        "32": "icons/borderify-32.png",
+        "48": "icons/borderify-48.png",
+        "96": "icons/borderify-96.png"
+    },
+    "content_scripts": [
+        {
+            "matches": [
+                "*://setmy.info/*"
+            ],
+            "js": [
+                "borderify.js"
+            ]
+        }
+    ],
+    "browser_specific_settings": {
+        "gecko": {
+            "id": "info@setmy.info"
+        }
+    }
+}
