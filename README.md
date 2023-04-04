@@ -14,6 +14,12 @@ https://extensionworkshop.com/documentation/publish/distribute-sideloading/
 
 https://extensionworkshop.com/documentation/publish/signing-and-distribution-overview/
 
+https://developer.mozilla.org/en-US/docs/Mozilla/Add-ons/WebExtensions/Content_scripts
+
+https://developer.mozilla.org/en-US/docs/Mozilla/Add-ons/WebExtensions/Background_scripts
+
+https://developer.mozilla.org/en-US/docs/Mozilla/Add-ons/WebExtensions/manifest.json/permissions
+
 ```shell
 npm install --global web-ext
 ```
