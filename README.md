@@ -1,0 +1,1 @@
+# firefox-extension-start-project
