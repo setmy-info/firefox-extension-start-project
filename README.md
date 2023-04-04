@@ -1,6 +1,6 @@
 # firefox-extension-start-project
 
-[Firefox addons](about:debugging)
+[Firefox addons](about:debugging#/runtime/this-firefox)
 
 ![img.png](docs%2Fimg.png)
 
@@ -13,6 +13,12 @@ https://developer.mozilla.org/en-US/docs/Mozilla/Add-ons/WebExtensions/Anatomy_o
 https://extensionworkshop.com/documentation/publish/distribute-sideloading/
 
 https://extensionworkshop.com/documentation/publish/signing-and-distribution-overview/
+
+https://developer.mozilla.org/en-US/docs/Mozilla/Add-ons/WebExtensions/Content_scripts
+
+https://developer.mozilla.org/en-US/docs/Mozilla/Add-ons/WebExtensions/Background_scripts
+
+https://developer.mozilla.org/en-US/docs/Mozilla/Add-ons/WebExtensions/manifest.json/permissions
 
 ```shell
 npm install --global web-ext
@@ -30,4 +36,63 @@ ZIP (XPI)
 
 ```shell
 web-ext build --overwrite-dest
+```
+
+Permissions
+
+https://developer.mozilla.org/en-US/docs/Mozilla/Add-ons/WebExtensions/manifest.json/permissions
+
+```json
+{
+    "permissions": [
+        "activeTab",
+        "alarms",
+        "background",
+        "bookmarks",
+        "browserSettings",
+        "browsingData",
+        "captivePortal",
+        "clipboardRead",
+        "clipboardWrite",
+        "contentSettings",
+        "contextMenus",
+        "contextualIdentities",
+        "cookies",
+        "debugger",
+        "declarativeNetRequest",
+        "declarativeNetRequestFeedback",
+        "declarativeNetRequestWithHostAccess",
+        "dns",
+        "downloads",
+        "downloads.open",
+        "find",
+        "geolocation",
+        "history",
+        "identity",
+        "idle",
+        "management",
+        "menus",
+        "menus.overrideContext",
+        "nativeMessaging",
+        "notifications",
+        "pageCapture",
+        "pkcs11",
+        "privacy",
+        "proxy",
+        "scripting",
+        "search",
+        "sessions",
+        "storage",
+        "tabHide",
+        "tabs",
+        "theme",
+        "topSites",
+        "unlimitedStorage",
+        "webNavigation",
+        "webRequest",
+        "webRequestBlocking",
+        "webRequestFilterResponse",
+        "webRequestFilterResponse.serviceWorkerScript"
+    ]
+}
 ```
