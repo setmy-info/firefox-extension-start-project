@@ -19,7 +19,7 @@
         const beastImage = document.createElement("img");
         beastImage.setAttribute("src", beastURL);
         beastImage.style.height = "100vh";
-        beastImage.className = "beastify-image";
+        beastImage.className = "changed-image";
         document.body.appendChild(beastImage);
     }
 
@@ -27,7 +27,7 @@
      * Remove every beast from the page.
      */
     function removeExistingBeasts() {
-        const existingBeasts = document.querySelectorAll(".beastify-image");
+        const existingBeasts = document.querySelectorAll(".changed-image");
         for (const beast of existingBeasts) {
             beast.remove();
         }

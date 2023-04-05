@@ -37,3 +37,62 @@ ZIP (XPI)
 ```shell
 web-ext build --overwrite-dest
 ```
+
+Permissions
+
+https://developer.mozilla.org/en-US/docs/Mozilla/Add-ons/WebExtensions/manifest.json/permissions
+
+```json
+{
+    "permissions": [
+        "activeTab",
+        "alarms",
+        "background",
+        "bookmarks",
+        "browserSettings",
+        "browsingData",
+        "captivePortal",
+        "clipboardRead",
+        "clipboardWrite",
+        "contentSettings",
+        "contextMenus",
+        "contextualIdentities",
+        "cookies",
+        "debugger",
+        "declarativeNetRequest",
+        "declarativeNetRequestFeedback",
+        "declarativeNetRequestWithHostAccess",
+        "dns",
+        "downloads",
+        "downloads.open",
+        "find",
+        "geolocation",
+        "history",
+        "identity",
+        "idle",
+        "management",
+        "menus",
+        "menus.overrideContext",
+        "nativeMessaging",
+        "notifications",
+        "pageCapture",
+        "pkcs11",
+        "privacy",
+        "proxy",
+        "scripting",
+        "search",
+        "sessions",
+        "storage",
+        "tabHide",
+        "tabs",
+        "theme",
+        "topSites",
+        "unlimitedStorage",
+        "webNavigation",
+        "webRequest",
+        "webRequestBlocking",
+        "webRequestFilterResponse",
+        "webRequestFilterResponse.serviceWorkerScript"
+    ]
+}
+```

@@ -1,0 +1,18 @@
+<project name="firefox-extension-start-project" default="build" basedir=".">
+
+    <description>FF extension start project.</description>
+
+    <property name="package.name" value="${ant.project.name}.xpi"/>
+
+    <target name="build" depends="xpi" description="Build target">
+    </target>
+
+    <target name="xpi">
+        <delete file="${package.name}"/>
+        <zip destfile="${package.name}">
+            <zipfileset dir="src" prefix="src"/>
+            <zipfileset dir="." includes="manifest.json"/>
+        </zip>
+    </target>
+
+</project>

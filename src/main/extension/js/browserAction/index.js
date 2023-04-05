@@ -1,8 +1,8 @@
 /**
  * CSS to hide everything on the page,
- * except for elements that have the "beastify-image" class.
+ * except for elements that have the "changed-image" class.
  */
-const hidePage = `body > :not(.beastify-image) {
+const hidePage = `body > :not(.changed-image) {
                     display: none;
                   }`;
 
@@ -17,12 +17,12 @@ function listenForClicks() {
          */
         function beastNameToURL(beastName) {
             switch (beastName) {
-                case "Frog":
-                    return browser.runtime.getURL("icons/borderify-32.png");
-                case "Snake":
-                    return browser.runtime.getURL("icons/borderify-48.png");
-                case "Turtle":
-                    return browser.runtime.getURL("icons/borderify-96.png");
+                case "First":
+                    return browser.runtime.getURL("src/main/extension/images/icons/borderify/borderify-32.png");
+                case "Second":
+                    return browser.runtime.getURL("src/main/extension/images/icons/borderify/borderify-48.png");
+                case "Third":
+                    return browser.runtime.getURL("src/main/extension/images/icons/borderify/borderify-96.png");
             }
         }
 
@@ -96,6 +96,6 @@ function reportExecuteScriptError(error) {
  * If we couldn't inject the script, handle the error.
  */
 browser.tabs
-    .executeScript({file: "/content_scripts/beastify.js"})
+    .executeScript({file: "/src/main/extension/js/browserAction/iconsChanger.js"})
     .then(listenForClicks)
     .catch(reportExecuteScriptError);
