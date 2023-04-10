@@ -1,6 +1,6 @@
 # firefox-extension-start-project
 
-[Firefox addons](about:debugging)
+[Firefox addons](about:debugging#/runtime/this-firefox)
 
 ![img.png](docs%2Fimg.png)
 
