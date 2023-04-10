@@ -96,3 +96,7 @@ https://developer.mozilla.org/en-US/docs/Mozilla/Add-ons/WebExtensions/manifest.
     ]
 }
 ```
+
+XPI without signing
+
+Use FF Developers edition and set in **xpinstall.signatures.required** **xpinstall.signatures.required** to **false**
