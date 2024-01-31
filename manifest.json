@@ -1,8 +1,8 @@
 {
-    "manifest_version": 2,
+    "manifest_version": 3,
     "name": "firefox-extension-start-project",
     "version": "0.0.0",
-    "description": "FF extension start project.",
+    "description": "Firefox extension start project.",
     "homepage_url": "https://github.com/setmy-info/firefox-extension-start-project",
     "icons": {
         "32": "src/main/extension/images/icons/borderify/borderify-32.png",
@@ -10,7 +10,11 @@
         "96": "src/main/extension/images/icons/borderify/borderify-96.png"
     },
     "permissions": [
-        "activeTab"
+        "activeTab",
+        "storage"
+    ],
+    "host_permissions": [
+        "*://setmy.info/*"
     ],
     "content_scripts": [
         {
@@ -23,19 +27,24 @@
             ]
         }
     ],
-    "browser_action": {
+    "action": {
         "default_title": "Browser Action Title",
         "default_icon": "src/main/extension/images/icons/borderify/borderify-32.png",
         "default_popup": "src/main/extension/html/browserAction/index.html"
     },
+    "options_ui": {
+        "page": "src/main/extension/html/optionPage/index.html"
+    },
     "web_accessible_resources": [
-        "src/main/extension/images/icons/borderify/borderify-32.png",
-        "src/main/extension/images/icons/borderify/borderify-48.png",
-        "src/main/extension/images/icons/borderify/borderify-96.png"
-    ],
-    "browser_specific_settings": {
-        "gecko": {
-            "id": "info@setmy.info"
+        {
+            "resources": [
+                "src/main/extension/images/icons/borderify/borderify-32.png",
+                "src/main/extension/images/icons/borderify/borderify-48.png",
+                "src/main/extension/images/icons/borderify/borderify-96.png"
+            ],
+            "matches": [
+                "<all_urls>"
+            ]
         }
-    }
+    ]
 }
