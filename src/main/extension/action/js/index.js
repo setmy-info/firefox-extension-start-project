@@ -18,11 +18,11 @@ function listenForClicks() {
         function beastNameToURL(beastName) {
             switch (beastName) {
                 case "First":
-                    return browser.runtime.getURL("src/main/extension/images/icons/borderify/borderify-32.png");
+                    return browser.runtime.getURL("src/main/extension/images/icons/icon-32.png");
                 case "Second":
-                    return browser.runtime.getURL("src/main/extension/images/icons/borderify/borderify-48.png");
+                    return browser.runtime.getURL("src/main/extension/images/icons/icon-48.png");
                 case "Third":
-                    return browser.runtime.getURL("src/main/extension/images/icons/borderify/borderify-96.png");
+                    return browser.runtime.getURL("src/main/extension/images/icons/icon-96.png");
             }
         }
 
@@ -32,7 +32,7 @@ function listenForClicks() {
          * send a "beastify" message to the content script in the active tab.
          */
         function beastify(tabs) {
-            browser.tabs.insertCSS({code: hidePage}).then(() => {
+            browser.scripting.insertCSS({code: hidePage}).then(() => {
                 const url = beastNameToURL(e.target.textContent);
                 browser.tabs.sendMessage(tabs[0].id, {
                     command: "beastify",
@@ -95,7 +95,26 @@ function reportExecuteScriptError(error) {
  * and add a click handler.
  * If we couldn't inject the script, handle the error.
  */
-browser.tabs
-    .executeScript({file: "/src/main/extension/js/browserAction/iconsChanger.js"})
-    .then(listenForClicks)
-    .catch(reportExecuteScriptError);
+/**
+ * Get the active tab,
+ * then execute the content script using "browser.scripting.executeScript".
+ */
+browser.tabs.query({active: true, currentWindow: true})
+    .then((tabs) => {
+        const activeTab = tabs[0];
+        return browser.scripting.executeScript({
+            target: {
+                tabId: activeTab.id,
+                allFrames: true,
+            },
+            files: ["/src/main/extension/js/iconsChanger.js"],
+        });
+    })
+    .then(() => {
+        // Script execution was successful.
+        listenForClicks();
+    })
+    .catch((error) => {
+        // Handle errors here.
+        reportExecuteScriptError(error);
+    });

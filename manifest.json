@@ -5,13 +5,14 @@
     "description": "Firefox extension start project.",
     "homepage_url": "https://github.com/setmy-info/firefox-extension-start-project",
     "icons": {
-        "32": "src/main/extension/images/icons/borderify/borderify-32.png",
-        "48": "src/main/extension/images/icons/borderify/borderify-48.png",
-        "96": "src/main/extension/images/icons/borderify/borderify-96.png"
+        "32": "src/main/extension/images/icons/icon-32.png",
+        "48": "src/main/extension/images/icons/icon-48.png",
+        "96": "src/main/extension/images/icons/icon-96.png"
     },
     "permissions": [
         "activeTab",
-        "storage"
+        "storage",
+        "scripting"
     ],
     "host_permissions": [
         "*://setmy.info/*"
@@ -22,25 +23,28 @@
                 "*://setmy.info/*"
             ],
             "js": [
-                "src/main/extension/js/borderify/border.js",
-                "src/main/extension/js/borderify/log.js"
+                "src/main/extension/content_scripts/js/border.js",
+                "src/main/extension/content_scripts/js/log.js"
+            ],
+            "css": [
+                "src/main/extension/content_scripts/css/index.css"
             ]
         }
     ],
     "action": {
         "default_title": "Browser Action Title",
-        "default_icon": "src/main/extension/images/icons/borderify/borderify-32.png",
-        "default_popup": "src/main/extension/html/browserAction/index.html"
+        "default_icon": "src/main/extension/images/icons/icon-32.png",
+        "default_popup": "src/main/extension/action/html/index.html"
     },
     "options_ui": {
-        "page": "src/main/extension/html/optionPage/index.html"
+        "page": "src/main/extension/options_ui/html/index.html"
     },
     "web_accessible_resources": [
         {
             "resources": [
-                "src/main/extension/images/icons/borderify/borderify-32.png",
-                "src/main/extension/images/icons/borderify/borderify-48.png",
-                "src/main/extension/images/icons/borderify/borderify-96.png"
+                "src/main/extension/images/icons/icon-32.png",
+                "src/main/extension/images/icons/icon-48.png",
+                "src/main/extension/images/icons/icon-96.png"
             ],
             "matches": [
                 "<all_urls>"
