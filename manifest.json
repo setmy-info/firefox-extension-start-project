@@ -4,6 +4,9 @@
     "version": "0.0.0",
     "description": "Firefox extension start project.",
     "homepage_url": "https://github.com/setmy-info/firefox-extension-start-project",
+    "developer": {
+        "name": "Imre Tabur"
+    },
     "icons": {
         "32": "src/main/extension/images/icons/icon-32.png",
         "48": "src/main/extension/images/icons/icon-48.png",
@@ -42,9 +45,8 @@
     },
     "background": {
         "scripts": [
-            "main.js"
-        ],
-        "type": "module"
+            "src/main/extension/background/js/index.js"
+        ]
     },
     "web_accessible_resources": [
         {
