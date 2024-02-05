@@ -102,6 +102,7 @@ function reportExecuteScriptError(error) {
 browser.tabs.query({active: true, currentWindow: true})
     .then((tabs) => {
         const activeTab = tabs[0];
+        console.log("activeTab.title: ", activeTab.title);
         return browser.scripting.executeScript({
             target: {
                 tabId: activeTab.id,

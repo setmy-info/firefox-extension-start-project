@@ -20,6 +20,8 @@ https://developer.mozilla.org/en-US/docs/Mozilla/Add-ons/WebExtensions/Backgroun
 
 https://developer.mozilla.org/en-US/docs/Mozilla/Add-ons/WebExtensions/manifest.json/permissions
 
+https://developer.mozilla.org/en-US/docs/Mozilla/Add-ons/WebExtensions/Native_messaging
+
 ```shell
 npm install --global web-ext
 ```

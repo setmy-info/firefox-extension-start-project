@@ -12,7 +12,8 @@
     "permissions": [
         "activeTab",
         "storage",
-        "scripting"
+        "scripting",
+        "webRequest"
     ],
     "host_permissions": [
         "*://setmy.info/*"
@@ -38,6 +39,12 @@
     },
     "options_ui": {
         "page": "src/main/extension/options_ui/html/index.html"
+    },
+    "background": {
+        "scripts": [
+            "main.js"
+        ],
+        "type": "module"
     },
     "web_accessible_resources": [
         {
