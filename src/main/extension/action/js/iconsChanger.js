@@ -1,4 +1,5 @@
 (() => {
+    console.log("iconsChanger");
     /**
      * Check and set a global guard variable.
      * If this content script is injected into the same page again,

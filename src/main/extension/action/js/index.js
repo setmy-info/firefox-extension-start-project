@@ -103,12 +103,12 @@ browser.tabs.query({active: true, currentWindow: true})
     .then((tabs) => {
         const activeTab = tabs[0];
         console.log("activeTab.title: ", activeTab.title);
-        return browser.scripting.executeScript({
+        browser.scripting.executeScript({
             target: {
                 tabId: activeTab.id,
                 allFrames: true,
             },
-            files: ["/src/main/extension/js/iconsChanger.js"],
+            files: ["/src/main/extension/action/js/iconsChanger.js"]
         });
     })
     .then(() => {
